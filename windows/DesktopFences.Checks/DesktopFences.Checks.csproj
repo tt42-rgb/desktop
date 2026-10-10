@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../DesktopFences/Model.cs" Link="Model.cs"/>
+    <Compile Include="../DesktopFences/ModelChecks.cs" Link="ModelChecks.cs"/>
+  </ItemGroup>
+</Project>
