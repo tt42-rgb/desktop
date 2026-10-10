@@ -37,7 +37,9 @@ class OrganizerTests(unittest.TestCase):
         sid = self.section()
         self.model.update_layout(sid, collapsed=True, x=120, y=80)
         restored = Organizer(self.config, self.base)
-        self.assertEqual(restored.desktop, self.desktop)
+        # Windows temporary paths may use short (8.3) names, while resolve()
+        # returns the full name. Verify the actual directory, not its spelling.
+        self.assertTrue(restored.desktop.samefile(self.desktop))
         self.assertEqual(restored.section(sid), self.model.section(sid))
         self.assertTrue(restored.folder(sid).is_dir())
 
